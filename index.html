@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Mensagem | Karla</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Swiper CSS e JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <!-- Custom Forms do Tailwind -->
+  <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet" />
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+    html {
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    .carousel-slide {
+      position: relative;
+      width: 100%;
+      padding-top: 70.25%;
+      /* 16:9 */
+    }
+
+    .carousel-slide img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: rotate(-6deg);
+      transition: transform 700ms ease-in-out;
+    }
+
+    .carousel-slide img:hover {
+      transform: rotate(6deg) scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="leading-normal tracking-normal text-indigo-400 m-6 bg-cover bg-fixed"
+  style="background-image: url('./img/header.png');">
+  <div class="h-full">
+    <!-- Main -->
+    <div
+      class="container mx-auto flex md:h-screen flex-wrap-reverse flex-col-reverse md:flex-row items-center md:justify-center">
+      <!-- Left Col -->
+      <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden reveal-left">
+        <h1 class="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
+          Parece que seu <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">namorado</span>
+          preparou uma mensagem pra você!
+        </h1>
+        <p id="contador" class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left"></p>
+      </div>
+
+      <!-- Right Col - Carrossel -->
+      <div class="w-full xl:w-3/5 md:p-12 pt-24 overflow-hidden reveal-slide">
+        <div class="swiper mySwiper w-full">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide carousel-slide">
+              <img src="./img/casal/foto1 (1).jpg" alt="Slide 1" style="padding: 0 35px;" />
+            </div>
+            <div class="swiper-slide carousel-slide">
+              <img src="./img/casal/foto1 (3).jpg" alt="Slide 2" style="padding: 0 35px;" />
+            </div>
+            <div class="swiper-slide carousel-slide">
+              <img src="./img/casal/foto1 (2).jpg" alt="Slide 3" style="padding: 0 35px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sessão para a Mensagem do Namorado -->
+  <section class="container mx-auto my-12 p-6 bg-white bg-opacity-80 rounded-lg shadow-lg reveal-section">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 text-center">Mensagem do Namorado</h2>
+    <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+      Olá, meu amor! Espero que esteja tudo bem com você. Quero te dizer que você é a pessoa mais importante da minha
+      vida e que eu te amo muito. Estou muito feliz por estar ao seu lado e por poder compartilhar todos os momentos
+      especiais com você. Você é a minha luz, o meu porto seguro, a minha alegria. Obrigado por ser tão incrível e por
+      me fazer tão feliz. Eu te amo mais do que tudo nesse mundo e quero passar o resto da minha vida ao seu lado. Te
+      amo! <br>
+      Me apaixonei antes de te beijar<br>
+      Me apaixonei antes de tocar na sua pele<br>
+      Me apaixonei antes de te sentir<br>
+      Me apaixonei naquele dia que você chegou até mim com um pequeno problema e com um pouco de assunto.<br>
+      Mal sabia que aquele dia mudaria nossas vidas<br>
+      Hoje ou daqui a alguns dias, estamos completando alguns meses de namoro, e só quero lembrar que você é a mulher da minha vida<br>
+      E eu espero sempre ser o homem da sua vida também, amor<br>
+      Te amo muito! <br>Linda<br>
+    </p>
+  </section>
+
+  <section class="container mx-auto my-12 p-6 bg-white bg-opacity-80 rounded-lg shadow-lg reveal-section">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 text-center">Música Especial</h2>
+
+    <div class="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg shadow-md">
+      <img id="album-cover" src="https://img.youtube.com/vi/zeqcOvSMddU/0.jpg" alt="Capa do Álbum"
+        class="w-20 h-20 rounded-lg shadow-lg">
+
+      <div class="flex-1">
+        <h3 id="music-title" class="text-lg font-semibold text-gray-800">Essa eu fiz pro nosso amor</h3>
+        <p id="artist-name" class="text-gray-600 text-sm">Jão</p>
+      </div>
+
+      <button id="play-btn" class="bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition">
+        ▶️
+      </button>
+    </div>
+
+    <div class="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg shadow-md">
+      <img id="album-cover" src="" alt="Sem foto"
+        class="w-20 h-20 rounded-lg shadow-lg">
+
+      <div class="flex-1">
+        <h3 id="music-title" class="text-lg font-semibold text-gray-800">Desconhecida</h3>
+        <p id="artist-name" class="text-gray-600 text-sm">Segredo</p>
+      </div>
+
+      <button id="play-btn2" class="bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition">
+        ▶️
+      </button>
+    </div>
+
+    
+
+    <audio id="audio-player">
+      <source src="./audio/music.mp3" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <audio id="audio-player2">
+      <source src="./audio/music2.mp3" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+  <script>
+    const dataInicial = new Date("2024-10-22T00:13:00");
+
+    function atualizarContador() {
+      const dataAtual = new Date();
+
+      let anos = dataAtual.getFullYear() - dataInicial.getFullYear();
+      let meses = dataAtual.getMonth() - dataInicial.getMonth();
+      let dias = dataAtual.getDate() - dataInicial.getDate();
+      let horas = dataAtual.getHours() - dataInicial.getHours();
+      let minutos = dataAtual.getMinutes() - dataInicial.getMinutes();
+      let segundos = dataAtual.getSeconds() - dataInicial.getSeconds();
+
+      if (segundos < 0) {
+        segundos += 60;
+        minutos--;
+      }
+
+      if (minutos < 0) {
+        minutos += 60;
+        horas--;
+      }
+
+      if (horas < 0) {
+        horas += 24;
+        dias--;
+      }
+
+      if (dias < 0) {
+        const ultimoDiaMesAnterior = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 0).getDate();
+        dias += ultimoDiaMesAnterior;
+        meses--;
+      }
+
+      if (meses < 0) {
+        meses += 12;
+        anos--;
+      }
+
+      const resultado = `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+      document.getElementById("contador").innerText = resultado;
+    }
+
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
+  </script>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.reveal-left', {
+      duration: 1200,
+      scale: 0.85,
+      distance: '0px',
+      easing: 'ease-in-out',
+      reset: false,
+    });
+
+    ScrollReveal().reveal('.reveal-right', {
+      duration: 1200,
+      origin: 'bottom',
+      distance: '80px',
+      rotate: { z: 10 },
+      easing: 'ease-in-out',
+      reset: false,
+    });
+
+    ScrollReveal().reveal('.reveal-section', {
+      duration: 1000,
+      origin: 'top',
+      distance: '50px',
+      easing: 'ease-in-out',
+      reset: false,
+    });
+
+    ScrollReveal().reveal('.reveal-slide', {
+      duration: 1200,
+      scale: 0.9,
+      distance: '20px',
+      easing: 'ease-in-out',
+      reset: false,
+      interval: 200,
+    });
+  </script>
+  <script>
+    const audio = document.getElementById("audio-player");
+    const playBtn = document.getElementById("play-btn");
+
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.innerHTML = "⏸️";
+      } else {
+        audio.pause();
+        playBtn.innerHTML = "▶️";
+      }
+    });
+  </script>
+    <script>
+      const audio2 = document.getElementById("audio-player2");
+      const playBtn2 = document.getElementById("play-btn2");
+  
+      playBtn2.addEventListener("click", () => {
+        if (audio2.paused) {
+          audio2.play();
+          playBtn2.innerHTML = "⏸️";
+        } else {
+          audio2.pause();
+          playBtn2.innerHTML = "▶️";
+        }
+      });
+    </script>
+</body>
+
+</html>
